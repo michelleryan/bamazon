@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "node modules for my bamazon application",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michelleryan/bamazon.git"
+  },
+  "author": "Michelle Ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michelleryan/bamazon/issues"
+  },
+  "homepage": "https://github.com/michelleryan/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.1.1",
+    "mysql": "^2.13.0"
+  }
+}
