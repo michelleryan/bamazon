@@ -1,21 +1,9 @@
 'use strict'
 
+const connection = require('./mySQLconnection.js').connectionDB
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 
-//connect to database
-
-var connection = mysql.createConnection({
-  host: "127.0.0.1",
-  port: 3306,
-
-  // Your username
-  user: "mrryan1",
-
-  // Your password
-  password: "",
-  database: "bamazon"
-});
 
 connection.connect(function(err) {
   if (err) throw err;
@@ -40,13 +28,14 @@ function displayProducts() {
    				+ result[i].department_name + " || " + result[i].price
    				+ " || " + result[i].stock_quantity);
    		}
-   		productIdSearch();
+
+   		productIdSearch(); //ask customer to choose an id of a product they would like to purchase
   });
 	
 	
 }
 
-
+//prompt customer to select a product ID, query the db and get the product_name, price and current stock quantity,go to next function
 function productIdSearch() {
   inquirer
     .prompt({
@@ -68,6 +57,7 @@ function productIdSearch() {
 	});
 }
 
+//prompts customer to enter how many of the product they would like to buy, moves on to place order
 function howManyBuy(quantity, productChoice, cost) {
 	inquirer
 		.prompt({
@@ -81,6 +71,7 @@ function howManyBuy(quantity, productChoice, cost) {
 		});
 }
 
+//checks there is enough in stock, if so the order is placed by showing the customer the total price and decreasing the total stock_quantity
 function placeOrder(buyNum, quantity, productChoice, cost) {
 	var num = parseInt(buyNum);
 
@@ -99,10 +90,8 @@ function placeOrder(buyNum, quantity, productChoice, cost) {
 		connection.query("UPDATE products SET stock_quantity = ? WHERE product_name = ?", [newQty, productChoice], function(err, res){
 			if (err) throw err;
 			//console.log("The new quantity is: " + newQty);
-			//displayProducts();
+			displayProducts();
 		});
 	}
-	//console.log(num + ", " + quantity);
 	
-
 }
