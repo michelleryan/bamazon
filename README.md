@@ -6,4 +6,4 @@ There are 2 parts to this application: A **customer** view and a **manager** vie
 ## Customer View: bamazonCustomer.js
 :black_medium_small_square:	Run node bamazonCustomer.js at the command line, it will immediately display the product list from the database and ask the customer to enter the ID of the product they would like to buy.
 
-[display products](screenshots/customer-displayproducts.png)
+![display products](screenshots/customer-displayproducts.png)
