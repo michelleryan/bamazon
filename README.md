@@ -18,10 +18,10 @@ There are 2 parts to this application: A **customer** view and a **manager** vie
 
 ## Manager View: bamazonManager.js
 The bamazonManager application is used by managers only.  The manager will have 4 options:
-	1. View Products for Sale  - This option will list all the items available
-	2. View Low Inventory - This option will list any items which have an inventory which is < 5
-	3. Add to Inventory - This option allows the manager to select an item and add more to it's current inventory quantity
-	4. Add New Product - This option allows the manager to add a complete new product
+	-1. View Products for Sale  - This option will list all the items available
+	-2. View Low Inventory - This option will list any items which have an inventory which is < 5
+	-3. Add to Inventory - This option allows the manager to select an item and add more to it's current inventory quantity
+	-4. Add New Product - This option allows the manager to add a complete new product
 
 The manager can choose to exit the application by entering '5' when viewing the list of menu options.
 
@@ -41,6 +41,7 @@ Enter 2 to View any products which have an inventory count lower than 5:
 
 ### Add to Inventory
 Enter 3 to Add to inventory:
+
 ![add inv1](screenshots/manager-addinv1.png)
 
 Choose an ID for the item you would like to add inventory:
